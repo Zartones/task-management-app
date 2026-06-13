@@ -1,0 +1,4 @@
+dropbox:
+  access-token: ${DROPBOX_ACCESS_TOKEN}
+  app-key: 5r2q1p6j66vij55
+  app-secret: c3tbsuggx3w8x5h
