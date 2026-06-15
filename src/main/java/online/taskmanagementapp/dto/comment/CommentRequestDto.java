@@ -1,14 +1,15 @@
 package online.taskmanagementapp.dto.comment;
 
-import java.time.LocalDateTime;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import online.taskmanagementapp.models.Task;
-import online.taskmanagementapp.models.User;
 
 @Data
 public class CommentRequestDto {
+    @NotBlank
     private String content;
-    private LocalDateTime timestamp;
-    private Task task;
-    private User user;
+
+    @NotNull
+    private Long taskId;
+
 }

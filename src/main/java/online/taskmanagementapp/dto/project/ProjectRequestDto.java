@@ -13,8 +13,10 @@ public class ProjectRequestDto {
 
     private String description;
 
+    @NotNull
     private LocalDate startDate;
 
+    @NotNull
     private LocalDate endDate;
 
     @NotNull

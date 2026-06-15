@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface CommentService {
-    CommentResponseDto create(CommentRequestDto requestDto);
+    CommentResponseDto create(CommentRequestDto requestDto, Long userId);
 
     Page<CommentResponseDto> getComments(Long taskId, Pageable pageable);
 }

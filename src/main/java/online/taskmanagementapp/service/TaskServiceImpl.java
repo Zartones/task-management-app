@@ -11,8 +11,10 @@ import online.taskmanagementapp.repository.TaskRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class TaskServiceImpl implements TaskService {
     private final TaskMapper taskMapper;
@@ -22,7 +24,7 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public TaskResponseDto create(TaskRequestDto requestDto) {
         Task task = taskMapper.toTask(requestDto);
-        task.setProject(projectRepository.getReferenceById(requestDto.getProject().getId()));
+        task.setProject(projectRepository.getReferenceById(requestDto.getProjectId()));
         return taskMapper.toResponse(taskRepository.save(task));
     }
 

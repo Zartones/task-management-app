@@ -1,11 +1,13 @@
 package online.taskmanagementapp.dto.label;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-import online.taskmanagementapp.models.User;
 
 @Data
 public class LabelRequestDto {
+    @NotBlank
     private String name;
+
+    @NotBlank
     private String color;
-    private User user;
 }
