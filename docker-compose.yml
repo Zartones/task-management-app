@@ -29,7 +29,7 @@ services:
       - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
       - $DEBUG_PORT:$DEBUG_PORT
     labels:
-      - "org.springframework.boot.readiness-check.tcp.disable=true"
+      - "org.springframework.boot.docker.compose.skip=true"
     environment:
       SPRING_APPLICATION_JSON: '{
         "spring.datasource.url"  : "jdbc:mysql://db:$MYSQLDB_DOCKER_PORT/$MYSQLDB_DATABASE",
