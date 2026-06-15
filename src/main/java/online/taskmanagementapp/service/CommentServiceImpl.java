@@ -15,8 +15,10 @@ import online.taskmanagementapp.repository.UserRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class CommentServiceImpl implements CommentService {
     private final CommentMapper commentMapper;
@@ -25,13 +27,13 @@ public class CommentServiceImpl implements CommentService {
     private final UserRepository userRepository;
 
     @Override
-    public CommentResponseDto create(CommentRequestDto requestDto) {
-        Task task = taskRepository.findById(requestDto.getTask().getId()).orElseThrow(() ->
+    public CommentResponseDto create(CommentRequestDto requestDto, Long userId) {
+        Task task = taskRepository.findById(requestDto.getTaskId()).orElseThrow(() ->
                 new EntityNotFoundException("Can't find task with id "
-                        + requestDto.getTask().getId()));
-        User user = userRepository.findById(requestDto.getUser().getId()).orElseThrow(() ->
+                        + requestDto.getTaskId()));
+        User user = userRepository.findById(userId).orElseThrow(() ->
                 new EntityNotFoundException("Can't find user with id "
-                        + requestDto.getUser().getId()));
+                        + userId));
         Comment comment = commentMapper.toComment(requestDto);
         comment.setUser(user);
         comment.setTask(task);

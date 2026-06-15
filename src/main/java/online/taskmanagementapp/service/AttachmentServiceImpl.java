@@ -12,9 +12,11 @@ import online.taskmanagementapp.service.dropbox.DropboxService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class AttachmentServiceImpl implements AttachmentService {
     private final AttachmentMapper attachmentMapper;

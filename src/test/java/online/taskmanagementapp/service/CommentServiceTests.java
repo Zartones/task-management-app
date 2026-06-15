@@ -77,8 +77,7 @@ public class CommentServiceTests {
         comment.setTimestamp(LocalDateTime.now());
 
         requestDto = new CommentRequestDto();
-        requestDto.setTask(task);
-        requestDto.setUser(user);
+        requestDto.setTaskId(task.getId());
         requestDto.setContent("Test comment");
 
         responseDto = new CommentResponseDto();
@@ -97,7 +96,7 @@ public class CommentServiceTests {
         when(commentRepository.save(comment)).thenReturn(comment);
         when(commentMapper.toResponse(comment)).thenReturn(responseDto);
 
-        CommentResponseDto result = commentService.create(requestDto);
+        CommentResponseDto result = commentService.create(requestDto, user.getId());
 
         assertThat(result.getId()).isEqualTo(1L);
         assertThat(result.getTask()).isEqualTo(task);
