@@ -22,6 +22,9 @@ Manage tasks and projects effectively through a web-based application. This syst
 * Comment: Represents a comment left by user under a task
 * Attachment: Represents an attachment that was added to task using dropbox services
 * Label: Represents a label given by user to a task
+
+<img width="1331" height="715" alt="Screenshot_6" src="https://github.com/user-attachments/assets/6cff3ebb-f594-4358-ac19-dae4cf3debe8" />
+
 ## Project Structure
 
 ```text    
@@ -53,6 +56,14 @@ src/
 │       └── liquibase.properties   # Liquibase migration configuration environment properties
 └── test/                         # Unit and integration tests
 ```  
+## Controllers and Endpoints
+<img width="1896" height="390" alt="1" src="https://github.com/user-attachments/assets/04fe03bb-a04e-4644-bc2e-741ef92aa49f" />
+<img width="1899" height="437" alt="2" src="https://github.com/user-attachments/assets/343d9a7c-8753-4d74-887d-a145192f8224" />
+<img width="1900" height="235" alt="3" src="https://github.com/user-attachments/assets/73a9b938-bb19-4302-b02c-874aca0ca073" />
+<img width="1899" height="230" alt="4" src="https://github.com/user-attachments/assets/dac16ef8-fb7f-4d1e-8ac5-db1115420a16" />
+<img width="1898" height="444" alt="5" src="https://github.com/user-attachments/assets/05ac9782-fe17-4ee2-810a-b6e23bcd89e6" />
+<img width="1898" height="236" alt="6" src="https://github.com/user-attachments/assets/1112c53e-f23e-46ce-9ea8-822f4ec3f41a" />
+<img width="1901" height="304" alt="7" src="https://github.com/user-attachments/assets/6322e59b-157b-46a9-96c3-aba9756d5ebb" />
 
 ## Getting Started
 
